@@ -1,0 +1,894 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700;900&display=swap');
+
+// IMPORTS
+
+@import "animaciones";
+@import "mixins";
+
+// VARIABLES
+
+$alto : 200px;
+$ancho : 200px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Nunito Sans', sans-serif; ;
+    font-size: 20px;
+    
+}
+
+body {
+    background-image: url("../img/back.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+    
+}
+
+
+
+/*  ########################### NAV-BAR #########################  */
+
+.navbar {
+    border: solid;
+    border-bottom-color: #29f8ff;
+    background-color: black;
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    opacity: 0.9;
+    align-items: center;
+    z-index: 100;
+
+        .logo {
+            margin: 0px 30px;
+            height: 60px;
+            width: auto;
+            transition: all 0.5s ;
+                &:hover {
+                    transform: scale(1.2);
+                }
+        }
+        .navbar-toggler{
+            background-color: #29f8ff;
+            opacity: 0.5;
+        }
+
+        .collapse {
+            justify-content:space-around;
+
+            .navbar-nav {
+                background-color: #000000;
+                opacity: 0.9;
+
+                .nav-item {
+                    margin-left: 60px;
+
+                    .nav-link {
+                        font-size: 700;
+                        color: #29f8ff;
+                        margin-left: 30px;
+                        text-decoration: none;
+                        transition: all 0.5s;
+                            &:hover {
+                                transform: scale(1.1);
+                                color:#f305f7 ;
+                            }
+                    }
+                }
+            
+            
+            }
+        }
+
+    
+       
+}
+
+/*  ########################### CAROUSEL #########################  */
+
+.carousel{
+    margin: 30px;
+    border: solid;
+    border-color: #29f8ff;
+}
+
+/*  ########################### SALUDO #########################  */
+
+.saludo {
+
+    @include saludo;
+    opacity: 0.8;
+    animation-name: opacity;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    h1 {
+        font-size: 30px;
+        color:#29f8ff;
+        padding: 15px;
+    }
+    p {
+        font-size: 20px;
+        color:white;
+    }
+
+}
+.saludo-2 {
+
+    @extend .saludo;
+    animation-name: enter-right;
+    animation-duration: 1.3s;
+
+    h1 {
+        color:red;
+        animation-name: opacity;
+        animation-duration: 2.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    
+    }
+    p {
+    
+        animation-name: enter-up;
+        animation-duration: 2.3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    
+    }
+
+}
+.saludo-3 {
+
+    @extend .saludo;
+    animation-name: enter-up;
+    animation-duration: 1.1s;
+
+    h1 {
+        color:#f308e3e0;
+
+    }
+  
+}
+
+
+/*  ########################### CARD HOME #########################  */
+
+
+.cuerpo {
+
+    @include flex-row-center;
+    padding: 9px 50px;
+
+    .card {
+
+        @include flex-column-center;
+        background-color:black;
+        border: solid;
+        border-color: #29f8ff;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 20px;
+        opacity: 0.9;
+
+        .card-img {
+
+            @include flex-row-center;
+            height: $alto + 20 ;
+            width: $ancho + 20;
+            margin: 0px 40px;
+      
+
+            .img {
+                height: $alto ;
+                width: $ancho;
+                margin: 10px 10px; 
+            }
+        }
+        .card-body {
+            display: inline-block;
+            padding: 20px 20px;
+
+            h5 {
+                font-size: 20px;
+                color: white;
+                
+            
+            }
+            p {
+                font-size: 15px;
+                color: #f305f7;
+            
+            }
+        
+        }
+
+
+    }
+  
+}
+
+/*  ########################### FOOTER #########################  */
+
+
+.footer {
+
+    @include flex-row-center;
+    background-color: #000000;
+    border: solid;
+    border-top-color: #29f8ff;
+    justify-content: space-between ;
+    padding: 5px 10%;
+
+    .foot-text {
+        padding: 10px;
+        margin: 5px;
+        width: $ancho;
+        height: $alto;
+
+        h4 {
+            font-size: 25px;
+            color: white;
+            margin: 10px 0px;
+
+            span {
+                font-size: 25px ;
+                color: #29f8ff;
+                margin: 10px 0px;
+            }
+        }
+        p {
+            font-size: 15px;
+            color: white;
+        }
+    }
+    .newsletter {
+
+        .news-title {
+            font-size: 25px;
+            color: #29f8ff;
+            margin: 15px 0px;   
+        }
+        .form-control {
+            border-radius: 5px;
+            margin: 5px 0px;
+        }
+    }
+    
+}
+
+
+
+/*  ########################### TERMS #########################  */
+
+.terms {
+
+    @include flex-row-center;
+    background-color: #000000;
+    justify-content: space-evenly;
+
+    .terms-text {
+        padding-top: 20px;
+
+        p {
+            font-size: 20px;
+            color: white;
+
+            a {
+                font-size: 15px;
+                text-decoration: none;
+            }
+        }
+    
+    }
+    .terms-link {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    
+}
+
+
+/*  ########################### ABOUT #########################  */
+
+.about {
+    
+    @include flex-row-center;
+    justify-content: space-between;
+  
+
+    .about-imag {
+    
+        animation-name: enter-right;
+        animation-duration: 1.2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+
+        img {
+            height: ($alto*3)-100;
+            width: ($ancho*3)-100;
+        }
+    
+    }
+    .about-text {
+        background-color: #000000;
+        opacity: 0.9;
+        animation-name: enter-left;
+        animation-duration: 1.2s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        
+        .about-text-1 {
+            padding:20px 20px;
+            margin:20px 20px;
+            align-items: center;
+
+            h2 {
+                color: white;
+                font-size: 30px;
+                padding:5px;
+                margin: 20px 20px;
+                
+                span {
+                    color: #29f8ff;
+                    font-size: 30px;    
+                }
+            }
+            p {
+                font-size: 20px;
+                padding:5px;
+                margin: 10px 20px;
+                color:white; 
+            }
+        }
+    }
+   
+}
+
+/* ######################### ESTUDIOS ###################### */
+
+.card-estudio-1 {
+    padding: 10px 50px;
+    background-color: black;
+    opacity: 0.9;
+    border: solid;
+    border-color: #29f8ff;
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: 
+    "uno dos dos"
+    "cuatro cuatro tres"
+    
+    ;
+    grid-column-gap: 5px ;
+    grid-row-gap: 5px;
+    
+    .imag-estudio-1{
+
+        @include flex-row-center;
+        background-color:white ;
+        grid-area: uno;
+        justify-content: center;
+        padding: 25px ;
+        margin: 20px;
+
+        img {
+                width: $alto;
+                height: $ancho;
+            }
+    }
+
+    .text-estudio-1 {
+        grid-area: dos;
+        @include flex-column-center;
+        justify-content: center;
+        padding: 25px ;
+
+        h5 {
+            font-size:30px;
+            color: red;    
+        }
+        p {
+            font-size:20px;
+            color:white;       
+        }
+    }
+    .imag-estudio-2{
+        grid-area: tres;
+        padding: 25px ;
+
+        img {
+                height: ($alto*3)-100;
+                width: ($ancho*3)-100;
+             }
+    }
+    .text-estudio-2{
+        grid-area: cuatro;
+        @include flex-column-center;
+        padding: 25px ;
+
+        h5 {
+            font-size:30px;
+            color:red;    
+        }
+        p {
+            font-size:20px;
+            color:white;     
+        }
+        
+    }
+}
+
+
+/* #################### Proyectos ############################### */
+
+.proyect {
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr;
+
+    .card-1 {
+        
+        @include flex-column-center;
+        justify-content: center;
+        background-color: #000000;
+        opacity: 0.9;
+        border: solid;
+        border-color: #29f8ff;
+        margin: 10px;
+      
+
+        .card-img {
+            @include flex-column-center;
+
+            img {
+            margin-top: 20px;
+            height: $alto - 50 ;
+            width: $ancho + 60; 
+            }
+        }
+        .card-body {
+
+            @include flex-column-center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 20px;
+
+            h5 {
+                font-size: 20px; 
+                color: white;  
+            }
+            p {
+                font-size: 15px;
+                color: white;
+            }
+         
+        } 
+
+    }
+    .card-2 {
+
+        @include flex-column-center;
+        background-color: #000000;
+        opacity: 0.9;
+        border: solid;
+        border-color: #29f8ff;
+        padding: 10px;
+        margin: 5px;
+
+        .video {
+   
+            border-color: #29f8ff;
+
+            iframe {
+                margin-top: 30px;
+                border-color: #29f8ff;
+                width: 560px; 
+                height: 315px ;
+            }
+            .buttons {
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                padding: 50px;
+                
+                button {
+                    padding: 9px 25px;
+                    margin: 0px 50px;
+                }
+            }
+        }
+    
+       
+    }
+    
+}
+
+
+/* ##################### Contactos ############################## */
+.contact {
+  
+    border: solid;
+    border-color: #29f8ff;
+
+    .contact-imag {
+        padding: 20px;
+        animation-name: opacity;
+        animation-duration: 3.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+
+            img {
+                height: ($alto*3)-100;
+                width: ($ancho*3)-100;
+            }
+        
+    }
+    .contact-text {
+        background-color: #000000;
+        opacity: 0.9;
+        padding: 20px;
+        animation-name: enter-right;
+        animation-duration: 1.5s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+
+        .contact-text-1{
+            h2 {
+                color: white;
+                font-size: 30px;
+                padding:5px;
+                margin: 20px 20px;  
+            }
+            p {
+                font-size: 20px;
+                padding:5px;
+                margin: 10px 20px;
+                color: white;
+            
+            }
+            span {
+                color: #29f8ff;
+                font-size: 30px; 
+            }
+        }
+    }
+ 
+
+}
+.redes-list {
+
+    @include flex-row-center;
+    justify-content: center;
+    background-color:black;
+    opacity: 0.9;
+    border-top: #29f8ff;
+
+    span {
+    display: inline-block;
+    padding: 0 20px;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        
+        img {
+            height: 30px;
+            width: 30px;
+            margin: 30px 0px; 
+        }
+        
+    }
+    
+
+}
+
+/* ##################### under - construction ################### */
+
+.page-build{
+
+    @include flex-row-center;
+    justify-content: center;
+
+    img {
+        height: ($alto * 2 ) + 50;
+            width: $ancho * 2;
+    
+    }
+}
+
+
+/* #################### Break points  ###########################*/
+
+
+@media screen and (max-width: 768px) {
+
+    //HOME
+
+    .carousel{
+        margin: 0px;
+    }
+    .saludo{
+        margin: 0px;
+    }
+     .cuerpo { 
+        @include flex-column-center;
+    } 
+    .footer {
+        @include flex-column-center;
+    }
+    .terms {
+        @include flex-column-center;
+        height: 150px;
+        justify-content: center ;
+
+        .terms-text{
+            padding: 0px 0px 0px 20px;
+            p{
+                color: white;
+            }
+        }
+        .terms-ul{
+            .terms-link {
+                display: inline-block;
+                justify-content: space-between;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    //ABOUT
+    .about { 
+        @include flex-column-center;
+
+        .about-imag{
+            img {
+                height: $alto * 2;
+                width: $ancho * 2;
+            }
+
+        }
+    }
+
+     //ESTUDIO
+     .cuerpo-estudio {
+        padding: auto;
+    }
+    .card-estudio-1 {
+
+        @include flex-column-center;
+        justify-content: center;
+       
+        
+        .imag-estudio-1{
+            img {
+                width: $ancho;
+                height: $alto;
+            }
+
+        }
+        .imag-estudio-2 {
+            img {
+                height: $alto * 2;
+                width: $ancho * 2;
+            }
+        }
+    }
+
+    //PROYECTOS
+
+    .proyect {
+       display: grid;
+       grid-template-columns: auto;
+
+       .card-1{
+        margin: 0%;
+        }
+        .card-2{
+            margin: 0%;
+
+            .buttons {
+                display:inline-block;
+                
+                padding: 0%;
+                margin: 20px; 
+
+                button {
+                    margin: 20px;
+                } 
+            }
+        }
+        
+    }
+   
+   //CONTACTOS
+
+    .contact {
+
+        @include flex-column-center;
+        justify-content: center;
+
+        .contact-imag {
+            @include flex-column-center;
+            justify-content: center;
+    
+
+            img {
+                height: $alto * 3;
+                width: $ancho * 3;
+            }
+
+        }
+        .contact-text {
+            @include flex-column-center;
+            justify-content: center;
+        }
+
+        .redes-list {
+            display:flex;
+            flex-wrap: wrap;
+        
+        }
+    }
+   //UNDER CONSTRUCTION
+
+    .page-build img {
+        height: ($alto * 2) + 50;
+        width: $ancho * 2;
+    
+    }
+}
+
+@media screen and (max-width: 426px){
+
+    //TERMS
+
+    .terms {
+     
+        
+        .terms-text{
+            padding: 0px 0px 0px 20px;
+            p{
+                font-size: 15px;
+                color: white;
+            }
+        }
+        .terms-ul{
+            .terms-link {
+                display: inline-block;
+                justify-content: space-between;
+                margin-left: 10px;
+            }
+        }
+    }
+    //ABOUT
+
+    .about {
+        .about-imag {
+            img {
+                height: $alto + 100;
+                width: $ancho  + 100;
+            }
+
+        }
+    }
+
+   //ESTUDIO
+
+    .card-estudio-1 {
+        .imag-estudio-1 {
+
+            margin-top: 20px;
+
+            img {
+
+                width: $ancho;
+                height: $alto;
+            }
+        }
+        .imag-estudio-2 {
+
+            margin: 0px;
+
+            img {
+
+                height: $alto + 50;
+                width: $ancho + 50;
+            }
+        }
+    }
+
+    //PROYECTOS
+
+   .proyect {
+
+        .card-2 {
+
+            .video{
+
+                iframe{
+
+                    width: 250px;
+                    height: 180px;
+                    margin: 15px;
+                } 
+            }
+            .buttons {
+
+                @include flex-column-center;
+                justify-content: center;
+                padding: 0%;
+                margin: 10px; 
+
+                button {
+
+                    margin: 10px;
+                    font-size: 20px;
+                } 
+            }
+        }
+
+    }
+  
+    //CONTACT
+
+    .contact {
+        @include flex-column-center;
+        padding: 5px;
+        margin:  0px;
+
+        .contact-imag {
+
+            @include flex-row-center;
+            justify-content: center;
+
+            img {
+                width: $ancho + 80;
+                height: $alto + 80;
+            }
+
+        }
+        .contact-text {
+            .contact-text-1 {
+                h2 {
+                    font-size: 25px;
+                    padding: 5px;
+                    margin:  0px;
+                }
+                p {
+                    font-size: 18px;
+                    padding: 5px;
+                    margin:  0px;
+                }
+                span {
+                    color: #29f8ff;
+                    font-size: 25px;
+                    padding: 5px;
+                    margin:  0px;
+                }
+
+            }
+
+        }
+      
+    }
+    .redes-list {
+        display:flex;
+        flex-wrap: wrap;
+    }
+ 
+    //UNDER CONSTRUCTION
+
+    .page-build img {
+        height: $alto + 50;
+        width: $ancho;
+    
+    }
+    
+
+}
