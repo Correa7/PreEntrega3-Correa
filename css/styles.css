@@ -148,23 +148,22 @@ body {
     opacity: 0.9; }
     .cuerpo .card .card-img {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      height: 220px;
-      width: 220px;
-      margin: 0px 40px; }
-      .cuerpo .card .card-img .img {
+      justify-content: center; }
+      .cuerpo .card .card-img img {
         height: 200px;
-        width: 200px;
-        margin: 10px 10px; }
+        width: 200px; }
     .cuerpo .card .card-body {
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px 20px; }
       .cuerpo .card .card-body h5 {
-        font-size: 20px;
+        font-size: 30px;
         color: white; }
       .cuerpo .card .card-body p {
-        font-size: 15px;
+        font-size: 20px;
         color: #f305f7; }
 
 /*  ########################### FOOTER #########################  */
