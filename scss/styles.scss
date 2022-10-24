@@ -92,6 +92,39 @@ body {
     margin: 30px;
     border: solid;
     border-color: #29f8ff;
+
+    .carousel-inner {
+
+        .carousel-item {
+
+            img {
+                width: $ancho * 3;
+                height: $alto * 3;
+                filter: blur(8px);
+                -webkit-filter: blur(8px);
+
+            }
+            .carousel-caption {
+                @include flex-row-center;
+                justify-content: center;
+
+                h5{
+                    color: #29f8ff;
+                    margin: 30px;
+                    font-size: 30px;
+                    
+                }
+                p {
+                    margin: 30px;
+                }
+                a{
+                     margin: 30px;
+                }
+
+            }
+               
+        }
+    }
 }
 
 /*  ########################### SALUDO #########################  */
@@ -192,8 +225,6 @@ body {
             h5 {
                 font-size: 30px;
                 color: white;
-                
-            
             }
             p {
                 font-size: 20px;
@@ -743,6 +774,34 @@ body {
 }
 
 @media screen and (max-width: 426px){
+
+    //Carousel
+    .carousel{
+        .carousel-inner {
+            .carousel-item {
+                .carousel-caption {
+                    @include flex-column-center;
+                    justify-content: center;
+    
+                    h5{
+                    
+                        margin: 10px;
+                        font-size: 25px;
+                    }
+                    p {
+                        margin: 10px;
+                        font-size: 17px;
+                    }
+                    a{
+                         margin: 10px;
+                         font-size: 22px;
+                    }
+    
+                }
+                   
+            }
+        }
+    }
 
     //TERMS
 
